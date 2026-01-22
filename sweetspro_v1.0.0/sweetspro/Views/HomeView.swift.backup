@@ -1,0 +1,214 @@
+import SwiftUI
+
+struct HomeView: View {
+    let banners = MockData.banners
+    let rankings = MockData.rankingProducts
+    let newArrivals = MockData.newArrivals
+    let news = MockData.news
+    
+    @EnvironmentObject var appState: AppState
+    @EnvironmentObject var userManager: UserManager
+    @State private var showSideMenu = false
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                ScrollView {
+                VStack(spacing: 0) {
+                    // Header
+                    HStack {
+                        Button(action: {
+                            withAnimation {
+                                showSideMenu.toggle()
+                            }
+                        }) {
+                            Image(systemName: "line.3.horizontal")
+                                .padding()
+                                .foregroundColor(.black)
+                        }
+                        Spacer()
+                        Text("SWEETS PRO")
+                            .font(.system(size: 20, weight: .bold, design: .serif))
+                            .foregroundColor(.sweetsBrown)
+                        Spacer()
+                        NavigationLink(destination: CartView().environmentObject(appState)) {
+                            Image(systemName: "cart")
+                                .padding()
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .background(Color.white)
+                    
+                    // Search Bar
+                    NavigationLink(destination: CategoryView().environmentObject(appState)) {
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.gray)
+                            Text("商品検索...")
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
+                        .padding(10)
+                        .background(Color.sweetsLightBg)
+                        .cornerRadius(8)
+                        .padding(.horizontal)
+                        .padding(.bottom, 10)
+                    }
+                    
+                    // Hero Slider
+                    TabView {
+                        ForEach(banners) { banner in
+                            AsyncImage(url: URL(string: banner.imageUrl)) { phase in
+                                switch phase {
+                                case .empty: Color.gray.opacity(0.1)
+                                case .success(let image): 
+                                    image.resizable().aspectRatio(contentMode: .fill)
+                                case .failure: Color.gray.opacity(0.1)
+                                @unknown default: EmptyView()
+                                }
+                            }
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+                    .frame(height: 250)
+                    
+                    // Ranking Section
+                    VStack(alignment: .leading) {
+                        SectionHeader(title: "RANKING", subtitle: "人気ランキング")
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 15) {
+                                ForEach(rankings) { product in
+                                    NavigationLink(destination: ProductDetailView(product: product)) {
+                                        ProductCell(product: product)
+                                            .frame(width: 160)
+                                            .foregroundColor(.black)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                    }
+                    .padding(.vertical)
+                    .background(Color.sweetsLightBg)
+                    
+                    // New Arrivals / Pick Up
+                    VStack(alignment: .leading) {
+                        SectionHeader(title: "PICK UP", subtitle: "おすすめ商品")
+                        
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15) {
+                            ForEach(newArrivals) { product in
+                                NavigationLink(destination: ProductDetailView(product: product)) {
+                                    ProductCell(product: product)
+                                        .foregroundColor(.black)
+                                }
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.vertical)
+                    
+                    // News Section
+                    VStack(alignment: .leading) {
+                        SectionHeader(title: "NEWS", subtitle: "お知らせ")
+                        
+                        VStack(alignment: .leading, spacing: 12) {
+                            ForEach(news) { item in
+                                NavigationLink(destination: NewsDetailView(newsItem: item)) {
+                                    HStack(alignment: .top) {
+                                        Text(item.date)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                            .frame(width: 70, alignment: .leading)
+                                        
+                                        Text(item.title)
+                                            .font(.caption)
+                                            .foregroundColor(.black)
+                                            .multilineTextAlignment(.leading)
+                                            .lineLimit(2)
+                                        Spacer()
+                                    }
+                                }
+                                Divider()
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    .padding(.vertical)
+                    
+                    // Footer
+                    VStack(spacing: 20) {
+                        Text("SWEETS PRO")
+                            .font(.system(size: 24, weight: .bold, design: .serif))
+                            .foregroundColor(.white)
+                        
+                        VStack(spacing: 15) {
+                            NavigationLink(destination: FAQView()) {
+                                Text("ご利用ガイド")
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                            
+                            NavigationLink(destination: InquiryView()) {
+                                Text("お問い合わせ")
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                            
+                            NavigationLink(destination: StaticPageView(title: "プライバシーポリシー")) {
+                                Text("プライバシーポリシー")
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                            
+                            NavigationLink(destination: StaticPageView(title: "特定商取引法に基づく表記")) {
+                                Text("特定商取引法に基づく表記")
+                                    .foregroundColor(.white.opacity(0.8))
+                            }
+                        }
+                        .font(.caption)
+                        
+                        Text("© Sweets Pro All Rights Reserved.")
+                            .font(.caption2)
+                            .foregroundColor(.white.opacity(0.6))
+                            .padding(.top, 10)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 40)
+                    .background(Color.sweetsBrown)
+                }
+            }
+            .navigationBarHidden(true)
+            .background(Color(UIColor.systemGroupedBackground))
+        }
+    }
+}
+
+}
+
+struct SectionHeader: View {
+    let title: String
+    let subtitle: String
+    
+    var body: some View {
+        HStack(alignment: .firstTextBaseline) {
+            Text(title)
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(.sweetsBrown)
+            
+            Text(subtitle)
+                .font(.caption)
+                .foregroundColor(.gray)
+            
+            Spacer()
+        }
+        .padding(.horizontal)
+        .padding(.bottom, 5)
+                }
+            }
+            
+            // Side Menu
+            SideMenuView(isShowing: $showSideMenu)
+                .environmentObject(userManager)
+        }
+        }
+    }
+}

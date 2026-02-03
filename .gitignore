@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# PyTorch Models (Large files - need to be trained locally)
+*.pt
+*.pth
+*.pkl
+*.pickle
+
+# Training Data (Large CSV files)
+ECCustomersupportAIAgent_v1.0.0/reproduce/data/
+ECCustomersupportAIAgent_v1.0.0/KG_tail_prediction/data/
+ECCustomersupportAIAgent_v1.0.0/monotaro-qa-system/product_data.json
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Cache
+.cache/
+*.cache

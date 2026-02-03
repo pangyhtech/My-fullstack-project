@@ -9,10 +9,15 @@ A collection of AI-powered full-stack development projects showcasing modern tec
 ### EC Customer Support AI Agent
 <img src="projectimage/ECCustomersupportAIAgent_v1.0.0.png" width="400" />
 
-Intelligent customer service AI with dual-brain RAG architecture and sentiment analysis.
+Advanced customer service AI system built for industrial B2B e-commerce, featuring state-of-the-art sentiment analysis and hybrid RAG architecture. This project represents a complete reproduction and optimization of the CoRe-USE model, achieving 73% accuracy in customer satisfaction prediction through innovative techniques including XLM-RoBERTa fine-tuning, Focal Loss optimization, and dynamic data augmentation.
 
-**Tech:** PyTorch, XLM-RoBERTa, TuckER, Flask  
-**Core:** Knowledge Base, Data Synthesis, Dual-Brain RAG, Sentiment Analysis
+The system integrates a dual-brain architecture: the "Left Brain" provides factual product information through structured knowledge base retrieval with 100% accuracy, while the "Right Brain" leverages TuckER-based knowledge graph reasoning for deep semantic understanding. The sentiment analysis engine employs a sophisticated hybrid approach combining rule-based logic with deep learning, successfully handling class imbalance through carefully tuned Focal Loss (γ=2.0) and achieving remarkable performance improvements: 488% increase in F1-score and 30x improvement in minority class recall compared to baseline.
+
+Built on a foundation of 24 industrial product categories with 480 authentic products and 63 semantic relations, the system demonstrates the power of domain-specific knowledge engineering. The dynamic dialogue generation system ensures training data diversity through Gaussian distribution sampling and SHA256 deduplication, while multi-language support (Japanese/English/Chinese) enables real-world deployment scenarios.
+
+**Tech:** PyTorch, XLM-RoBERTa (270M), TuckER, Flask, Focal Loss  
+**Core:** Industrial KG, Dual-Brain RAG, Sentiment Analysis, Data Augmentation  
+**Performance:** 73% Accuracy, 73.73% F1-Score, 96% F1 for Critical Class
 
 [View Details](ECCustomersupportAIAgent_v1.0.0/)
 

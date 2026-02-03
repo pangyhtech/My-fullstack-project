@@ -9,13 +9,13 @@ venv/
 ENV/
 env/
 
-# PyTorch Models (Large files - need to be trained locally)
+# PyTorch Models (Large files - DO NOT UPLOAD)
 *.pt
 *.pth
 *.pkl
 *.pickle
 
-# Training Data (Large CSV files)
+# Training Data (Large files - DO NOT UPLOAD)
 ECCustomersupportAIAgent_v1.0.0/reproduce/data/
 ECCustomersupportAIAgent_v1.0.0/KG_tail_prediction/data/
 ECCustomersupportAIAgent_v1.0.0/monotaro-qa-system/product_data.json
@@ -37,3 +37,6 @@ ECCustomersupportAIAgent_v1.0.0/monotaro-qa-system/product_data.json
 # Cache
 .cache/
 *.cache
+
+# Git LFS (remove if not using)
+.gitattributes

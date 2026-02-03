@@ -25,8 +25,4 @@ Full-featured iOS shopping app developed in 6 hours with AI assistance.
 **Tech:** SwiftUI, Python, MVVM  
 **Stats:** 30+ screens, 5000+ lines of code, 6 hours development
 
-[View Details](sweetspro_v1.0.0/)
-
----
-
-**Last Updated:** February 2026
+[View Details](sweetspro_v1.0.0/) | [Article 1](https://qiita.com/pangyhtech/items/2eba0d74682d22d2f19c) | [Article 2](https://qiita.com/pangyhtech/items/cbfe0c193d54e585c391)

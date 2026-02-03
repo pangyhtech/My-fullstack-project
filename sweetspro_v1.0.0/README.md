@@ -50,3 +50,7 @@ open sweetspro.xcodeproj
 - ⏱️ Time: 6 hours
 - 📱 Screens: 30+
 - 💻 Code: ~5,000 lines
+
+## Articles
+📝 [Article 1 - Development Process](https://qiita.com/pangyhtech/items/2eba0d74682d22d2f19c)  
+📝 [Article 2 - Technical Details](https://qiita.com/pangyhtech/items/cbfe0c193d54e585c391)

@@ -1,15 +1,15 @@
 # MBTI Consulting Assistant
 
-[English](README.md) | [日本語](README_JP.md)
+AI-powered conversational assistant for MBTI personality type consulting and analysis.
 
 ---
 
 ## Screenshots
-![Screenshot 1](../projectimage/MBTI%20Consulting%20Assistant1.png)
-![Screenshot 2](../projectimage/MBTI%20Consulting%20Assistant2.png)
 
-## About
-AI-powered conversational assistant for MBTI personality type consulting and analysis.
+<img src="../projectimage/MBTI Consulting Assistant1.png" width="400" />
+<img src="../projectimage/MBTI Consulting Assistant2.png" width="400" />
+
+---
 
 ## Tech Stack
 - LangChain
@@ -18,7 +18,7 @@ AI-powered conversational assistant for MBTI personality type consulting and ana
 
 ## Quick Start
 ```bash
-cd "Base on langchain -MBTI Consulting Assistant_JP/mbti"
+cd mbti
 npm install
 npm start
 ```

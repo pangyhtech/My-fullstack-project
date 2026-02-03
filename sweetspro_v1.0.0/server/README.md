@@ -1,6 +1,6 @@
 # SweetsPro Backend Server
 
-[English](README.md) | [日本語](README_JP.md)
+Simple HTTP server for the SweetsPro iOS application.
 
 ---
 
@@ -22,5 +22,5 @@ Server runs at: **http://localhost:8080**
 - In-memory storage
 
 ## iOS Integration
-**Simulator:** Use `localhost:8080`  
-**Physical Device:** Replace with Mac's IP address
+- **Simulator:** Use `localhost:8080`
+- **Physical Device:** Replace with Mac's IP address

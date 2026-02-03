@@ -1,25 +1,25 @@
 # SweetsPro - iOS E-Commerce App
 
-[English](README.md) | [日本語](README_JP.md)
+Full-featured iOS shopping app for Japanese and Western confectionery, developed in 6 hours with AI assistance.
 
 ---
 
 ## Screenshots
-<p float="left">
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.11.22.png" width="200" />
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.12.08.png" width="200" />
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.12.19.png" width="200" />
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.12.36.png" width="200" />
+
+<p>
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.11.22.png" width="180" />
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.12.08.png" width="180" />
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.12.19.png" width="180" />
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.12.36.png" width="180" />
 </p>
-<p float="left">
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.13.00.png" width="200" />
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.13.13.png" width="200" />
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.13.38.png" width="200" />
-  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.14.45.png" width="200" />
+<p>
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.13.00.png" width="180" />
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.13.13.png" width="180" />
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.13.38.png" width="180" />
+  <img src="appresult_images/Simulator Screenshot - iPhone 17 Pro - 2026-01-22 at 14.14.45.png" width="180" />
 </p>
 
-## About
-Full-featured iOS shopping app for Japanese and Western confectionery, developed in 6 hours with AI assistance.
+---
 
 ## Features
 - User authentication & profiles
@@ -46,7 +46,7 @@ python3 server.py
 open sweetspro.xcodeproj
 ```
 
-## Stats
-- ⏱️ Development: 6 hours
+## Development Stats
+- ⏱️ Time: 6 hours
 - 📱 Screens: 30+
 - 💻 Code: ~5,000 lines

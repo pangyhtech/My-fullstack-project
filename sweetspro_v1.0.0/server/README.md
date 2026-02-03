@@ -1,36 +1,55 @@
-# Sweets Pro 图片服务器
+# SweetsPro Backend Server
 
-## 启动服务器
+[English](#english) | [日本語](#japanese)
 
-在终端中运行：
+---
 
+<a name="english"></a>
+## English
+
+### Quick Start
 ```bash
-cd /Users/pyh0403/Desktop/sweetspro/server
+cd sweetspro_v1.0.0/server
 python3 server.py
 ```
 
-服务器将在 http://localhost:8080 启动
+Server runs at: **http://localhost:8080**
 
-## 访问图片
+### API Endpoints
+- Products: `GET /api/products`
+- Images: `GET /images/{image_name}.png`
 
-图片URL格式：
-- http://localhost:8080/images/strawberry_montblanc_cake.png
-- http://localhost:8080/images/pistachio_mousse_cake.png
-- http://localhost:8080/images/matcha_tiramisu_dessert.png
-- http://localhost:8080/images/rare_cheesecake_slice.png
-- http://localhost:8080/images/fruit_tart_cake.png
-- http://localhost:8080/images/hokkaido_shortcake.png
-- http://localhost:8080/images/cake_assortment_set.png
+### Tech
+- Python 3.x
+- HTTPServer
+- In-memory storage
 
-## 商品API
+### iOS Integration
+**Simulator:** Use `localhost:8080`  
+**Physical Device:** Replace with Mac's IP address
 
-获取所有商品数据：
+---
+
+<a name="japanese"></a>
+## 日本語
+
+### クイックスタート
+```bash
+cd sweetspro_v1.0.0/server
+python3 server.py
 ```
-GET http://localhost:8080/api/products
-```
 
-## 注意事项
+サーバー起動: **http://localhost:8080**
 
-1. 运行iOS应用前，请确保服务器已启动
-2. iOS模拟器可以访问localhost
-3. 真机测试需要将localhost改为Mac的局域网IP地址
+### APIエンドポイント
+- 商品: `GET /api/products`
+- 画像: `GET /images/{image_name}.png`
+
+### 技術
+- Python 3.x
+- HTTPServer
+- インメモリストレージ
+
+### iOS統合
+**シミュレーター:** `localhost:8080`を使用  
+**実機:** MacのIPアドレスに置き換え

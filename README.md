@@ -6,6 +6,18 @@ A collection of AI-powered full-stack development projects showcasing modern tec
 
 ## Projects
 
+### EC Customer Support AI Agent
+<img src="projectimage/ECCustomersupportAIAgent_v1.0.0.png" width="400" />
+
+Intelligent customer service AI with dual-brain RAG architecture and sentiment analysis.
+
+**Tech:** PyTorch, XLM-RoBERTa, TuckER, Flask  
+**Core:** Knowledge Base, Data Synthesis, Dual-Brain RAG, Sentiment Analysis
+
+[View Details](ECCustomersupportAIAgent_v1.0.0/)
+
+---
+
 ### MBTI Consulting Assistant
 <img src="projectimage/MBTI Consulting Assistant1.png" width="400" />
 

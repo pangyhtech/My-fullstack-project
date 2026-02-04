@@ -2,15 +2,17 @@
 
 <img src="../projectimage/ECCustomersupportAIAgent_v1.0.0.png" width="600" />
 
-An intelligent customer service AI system for e-commerce platforms, featuring hybrid RAG architecture and advanced sentiment analysis. This project represents a complete reproduction and optimization of the CoRe-USE model for the MonotaRO industrial B2B e-commerce scenario.
+An experimental customer service AI system for e-commerce research, featuring hybrid RAG architecture and advanced sentiment analysis. This academic project represents a complete reproduction and optimization of the CoRe-USE model for industrial B2B e-commerce scenarios using synthetic data.
+
+**Note**: This is a research prototype using simulated industrial product catalogs and synthetic dialogue data, not a production system.
 
 ---
 
 ## Core Algorithms
 
 ### 1. Knowledge Base Construction
-- **Data Synthesis**: Extracts structured product data from 50+ dialogue CSV files
-- **JSON Schema**: Organizes 24 industrial product categories with specs, prices, and Q&A pairs
+- **Synthetic Data Generation**: Creates structured product data from simulated industrial catalogs
+- **JSON Schema**: Organizes 24 virtual product categories with specs, prices, and Q&A pairs
 - **Entity Extraction**: Uses regex patterns to parse attributes (price, weight, size, specifications)
 - **Dynamic Slot Filling**: Generates unique dialogues using Gaussian distribution and range randomization
 
@@ -19,7 +21,7 @@ An intelligent customer service AI system for e-commerce platforms, featuring hy
 **Left Brain (Factual Retrieval)**
 - Exact matching for product specifications
 - Fuzzy Q&A matching using `difflib.SequenceMatcher`
-- 100% accuracy for price and spec queries
+- High accuracy for price and spec queries on synthetic data
 
 **Right Brain (Deep Reasoning)**
 - TuckER-based Knowledge Graph completion
@@ -33,7 +35,7 @@ An intelligent customer service AI system for e-commerce platforms, featuring hy
   - Rule-based overrides for objective queries
   - Strong negative/positive keyword detection
   - Confidence-based fallback mechanism
-- **Performance**: 73% accuracy, 73.73% F1-score
+- **Performance**: 73% accuracy, 73.73% F1-score on synthetic test data
 
 ### 4. Algorithm Optimization
 - **Model Upgrade**: From BERT-Japanese (110M) to XLM-RoBERTa (270M)
@@ -47,7 +49,9 @@ An intelligent customer service AI system for e-commerce platforms, featuring hy
 
 ### Project Background
 
-CoRe-USE (Context-aware Representation using User Satisfaction Estimation) is a model designed to evaluate multi-turn dialogue satisfaction. This project represents a complete reproduction, migration, and optimization of the original model for the MonotaRO industrial e-commerce scenario.
+CoRe-USE (Context-aware Representation using User Satisfaction Estimation) is a model designed to evaluate multi-turn dialogue satisfaction. This project represents an academic reproduction, migration, and optimization of the original model for industrial e-commerce scenarios using synthetic data.
+
+**Disclaimer**: This is an experimental research project. All product data, dialogues, and knowledge graphs are synthetically generated for academic purposes.
 
 ### 1. Source Code Analysis
 
@@ -62,11 +66,11 @@ CoRe-USE (Context-aware Representation using User Satisfaction Estimation) is a 
 - Meaningless entity descriptions ("Entity Text N")
 - 6-class classification task too granular for synthetic data
 
-### 2. Domain Adaptation for MonotaRO
+### 2. Domain Adaptation with Synthetic Data
 
-**Industrial Knowledge Graph Construction:**
-- **24 Product Categories**: Safety equipment, cutting tools, logistics, piping, construction hardware, etc.
-- **480 Real Products**: With authentic physical attributes (e.g., "Helmet: Material ABS, Weight 340g, Standard JIS T8131")
+**Simulated Industrial Knowledge Graph:**
+- **24 Virtual Product Categories**: Safety equipment, cutting tools, logistics, piping, construction hardware, etc.
+- **480 Synthetic Products**: With simulated physical attributes (e.g., "Helmet: Material ABS, Weight 340g, Standard JIS T8131")
 - **63 Semantic Relations**: 15 general (price, stock, shipping) + 48 specialized (torque, blade diameter, specifications)
 
 **Dynamic Dialogue Generation System:**
@@ -94,7 +98,7 @@ CoRe-USE (Context-aware Representation using User Satisfaction Estimation) is a 
 - **Focal Loss**: FL(p_t) = -α_t(1-p_t)^γ log(p_t) with γ=2.0
 - **Class Weights**: [1.83, 0.52, 1.90] to handle imbalance
 
-### 4. Final Results
+### 4. Experimental Results (Synthetic Data)
 
 | Metric | Baseline | v1 | v2 (Final) | Improvement |
 |--------|----------|----|-----------| ------------|
@@ -103,8 +107,8 @@ CoRe-USE (Context-aware Representation using User Satisfaction Estimation) is a 
 | **Recall** | 20.65% | 49.03% | **74.82%** | **+262%** |
 | **F1-Score** | 12.52% | 48.61% | **73.73%** | **+488%** |
 
-**Class-Level Performance (v2):**
-- **Dissatisfied**: F1 0.96 (critical for business alerts)
+**Class-Level Performance (v2) on Synthetic Test Set:**
+- **Dissatisfied**: F1 0.96 (high precision on synthetic negative samples)
 - **Neutral**: F1 0.76 (stable majority class)
 - **Satisfied**: Recall 60% (30x improvement from v1's 2%)
 
@@ -124,8 +128,8 @@ python3 app.py
 Access at: **http://localhost:8080**
 
 ## Features
-- Real-time sentiment monitoring with 73% accuracy
-- Structured industrial product knowledge base (24 categories, 480 products)
+- Real-time sentiment monitoring with 73% accuracy on synthetic data
+- Structured synthetic industrial product knowledge base (24 categories, 480 virtual products)
 - Hybrid RAG + reasoning system
 - Professional e-commerce interface
 - Dynamic category/product selection
@@ -141,3 +145,6 @@ Access at: **http://localhost:8080**
 **Note**: Model files (*.pt, *.pkl) are not included in the repository due to size constraints. To use this system:
 1. Train the model using `reproduce/run_full_pipeline.py`
 2. Or download pre-trained models from [release page]
+
+## Academic Use Only
+This project is for research and educational purposes only. All data is synthetically generated and does not represent real products or customer interactions.

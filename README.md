@@ -9,14 +9,16 @@ A collection of AI-powered full-stack development projects showcasing modern tec
 ### EC Customer Support AI Agent
 <img src="projectimage/ECCustomersupportAIAgent_v1.0.0.png" width="400" />
 
-Advanced customer service AI system built for industrial B2B e-commerce, featuring state-of-the-art sentiment analysis and hybrid RAG architecture. This project represents a complete reproduction and optimization of the CoRe-USE model, achieving 73% accuracy in customer satisfaction prediction through innovative techniques including XLM-RoBERTa fine-tuning, Focal Loss optimization, and dynamic data augmentation.
+An experimental customer service AI system for industrial B2B e-commerce research, featuring sentiment analysis and hybrid RAG architecture. This academic project represents a complete reproduction and optimization of the CoRe-USE model, achieving 73% accuracy in customer satisfaction prediction through innovative techniques including XLM-RoBERTa fine-tuning, Focal Loss optimization, and dynamic data augmentation.
 
-The system integrates a dual-brain architecture: the "Left Brain" provides factual product information through structured knowledge base retrieval with 100% accuracy, while the "Right Brain" leverages TuckER-based knowledge graph reasoning for deep semantic understanding. The sentiment analysis engine employs a sophisticated hybrid approach combining rule-based logic with deep learning, successfully handling class imbalance through carefully tuned Focal Loss (γ=2.0) and achieving remarkable performance improvements: 488% increase in F1-score and 30x improvement in minority class recall compared to baseline.
+The system integrates a dual-brain architecture: the "Left Brain" provides factual product information through structured knowledge base retrieval, while the "Right Brain" leverages TuckER-based knowledge graph reasoning for semantic understanding. The sentiment analysis engine employs a hybrid approach combining rule-based logic with deep learning, successfully handling class imbalance through Focal Loss (γ=2.0) and achieving significant performance improvements: 488% increase in F1-score and 30x improvement in minority class recall compared to baseline.
 
-Built on a foundation of 24 industrial product categories with 480 authentic products and 63 semantic relations, the system demonstrates the power of domain-specific knowledge engineering. The dynamic dialogue generation system ensures training data diversity through Gaussian distribution sampling and SHA256 deduplication, while multi-language support (Japanese/English/Chinese) enables real-world deployment scenarios.
+Built on synthetic data generated from simulated industrial product catalogs, the system includes 24 product categories with 480 virtual products and 63 semantic relations, demonstrating domain-specific knowledge engineering techniques. The dynamic dialogue generation system ensures training data diversity through Gaussian distribution sampling and SHA256 deduplication, while multi-language support (Japanese/English/Chinese) simulates real-world scenarios.
+
+**Note**: This is an experimental research project using synthetic data, not a production system.
 
 **Tech:** PyTorch, XLM-RoBERTa (270M), TuckER, Flask, Focal Loss  
-**Core:** Industrial KG, Dual-Brain RAG, Sentiment Analysis, Data Augmentation  
+**Core:** Synthetic Industrial KG, Dual-Brain RAG, Sentiment Analysis, Data Augmentation  
 **Performance:** 73% Accuracy, 73.73% F1-Score, 96% F1 for Critical Class
 
 [View Details](ECCustomersupportAIAgent_v1.0.0/)
